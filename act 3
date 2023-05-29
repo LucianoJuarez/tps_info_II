@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int my_strlen(const char *cadena);
+
+int main() {
+char cadena[]= "Hola mundo";
+int tamano= my_strlen(cadena);
+	
+printf("La longitud de la cadena '%s' es %d\n", cadena, tamano);
+	
+return 0;
+}
+
+int my_strlen(const char *cadena) {
+int tamano= 0;
+	
+  while (*cadena != '\0') {
+	 tamano++;
+   cadena++;
+}
+	
+return tamano;
+}
