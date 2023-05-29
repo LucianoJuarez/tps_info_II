@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void strcpy(char *t, const char *s);
+
+int main() {
+char s[] = "Hola, mundo!";
+char t[20];
+	
+strcpy (t, s);
+	
+printf("info de la cadena t: %s\n", t);
+	
+return 0;
+}
+
+void strcpy(char *t, const char *s) {
+int i= 0;
+	
+while(s[i] != '\0') {
+	t[i] = s[i];
+	i++; }
+	
+  t[i] = '\0';
+  
+}
+
