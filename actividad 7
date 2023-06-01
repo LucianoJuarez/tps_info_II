@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_ALUMNOS 10
+#define MAX_LONGITUD_NOMBRE 50
+
+void ordenarNombres(char nombres[][MAX_LONGITUD_NOMBRE], int numAlumnos) {
+	int i, j;
+	char temp[MAX_LONGITUD_NOMBRE];
+	
+	for (i = 0; i < numAlumnos - 1; i++) {
+		for (j = i + 1; j < numAlumnos; j++) {
+			if (strcmp(nombres[i], nombres[j]) > 0) {
+				strcpy(temp, nombres[i]);
+				strcpy(nombres[i], nombres[j]);
+				strcpy(nombres[j], temp);
+			}
+		}
+	}
+}
+
+int main() {
+	char nombres[MAX_ALUMNOS][MAX_LONGITUD_NOMBRE];
+	int numAlumnos, i;
+	
+	printf("Ingrese el número de alumnos (máximo %d): ", MAX_ALUMNOS);
+	scanf("%d", &numAlumnos);
+	
+	// Asegurarse de que el número de alumnos no excede el límite
+	if (numAlumnos > MAX_ALUMNOS) {
+		printf("Número de alumnos excede el límite.\n");
+		return 1;
+	}
+	
+	
+	// Leer los nombres de los alumnos
+	for (i = 0; i < numAlumnos; i++) {
+		printf("Ingrese el nombre del alumno %d: ", i + 1);
+		scanf("%s", nombres[i]);
+	}
+	
+	// Ordenar los nombres alfabéticamente
+	ordenarNombres(nombres, numAlumnos);
+	
+	// Mostrar los nombres ordenados
+	printf("\nNombres de los alumnos ordenados alfabéticamente:\n");
+	for (i = 0; i < numAlumnos; i++) {
+		printf("%d. %s\n", i + 1, nombres[i]);
+	}
+	
+	return 0;
+}
