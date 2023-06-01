@@ -1,0 +1,25 @@
+#include <stdio.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+	char cadena1[20]="Hola "; //Declaramos cadenas con contenido
+	char cadena2[20]="Mundo!"; 
+	
+	printf("valor de cadena1: "); 
+	puts(cadena1); //Desplegamos el valor de la variable "cadena1"
+	printf("valor de cadena2: ");
+	puts(cadena2); //Desplegamos el valor de la variable "cadena2"
+	
+	printf("\n"); //Salto de línea
+	
+	//printf("cadena2 concatenada a cadena1"); 	
+	strcat(cadena1, cadena2); //Concatenamos cadena2 a cadena1
+	
+	printf("\n"); //Salto de línea	
+	
+	printf("valor de cadena1 concatenada con la cadena2: ");	
+	puts(cadena1); //Después del concatenado, desplegamos el valor de la variable "cadena1" 	
+
+	return 0;
+}
